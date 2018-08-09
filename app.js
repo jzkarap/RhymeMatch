@@ -47,7 +47,7 @@ function createWordDivs() {
 //         "jsonrpc": "2.0",
 //         "method": "generateStrings",
 //         "params": {
-//             "apiKey": "8134d7d6-4f18-4e98-bb10-0f53e14c3d46",
+//             "apiKey": "---",
 //             "n": 1,
 //             "length": 1,
 //             "characters": "abcdefghijklmnopqrstuvwxyz",
