@@ -1,6 +1,8 @@
 # RhymeMatch
 * RhymeMatch will be a drag-and-drop game for young children to practice rhyming words
 
+<img src="https://github.com/jzkarap/RhymeMatch/blob/master/RhymeGame.gif?raw=true">
+
 Currently, it displays only within browser console. It makes calls to datamuse API to get a target word and a selection of rhyming words. It will repeat calls until it accepts a sufficient amount of rhyming matches to build a game.
 
 <h2>To-Do</h2>
