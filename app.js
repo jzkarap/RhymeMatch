@@ -342,6 +342,7 @@ function fishForNewWords() {
 
 startButton.addEventListener("click", function () {
 
+    $(".congrats").text("");
     undrawWordSelection();
     dumpRhymes();
     dumpDecoys();
@@ -422,6 +423,9 @@ interact('.dropzone').dropzone({
         event.relatedTarget.classList.add("bingo");
         if($(".bingo").length >= (allWords.length / 2)) {
             event.target.classList.add("winner");
+            $(".congrats").text("Nice work. Try again soon.");
+            console.log("Nice work. Try again soon.");
+            console.log("");
         }
     },
     ondropdeactivate: function (event) {
