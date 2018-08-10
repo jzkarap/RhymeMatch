@@ -3,7 +3,7 @@
 
 <img src="https://github.com/jzkarap/RhymeMatch/blob/master/RhymeGame.gif?raw=true">
 
-Currently, it displays only within browser console. It makes calls to datamuse API to get a target word and a selection of rhyming words. It will repeat calls until it accepts a sufficient amount of rhyming matches to build a game. Interact.js library is used for drag and drop events.
+Currently, it displays only within browser console. It makes calls to datamuse API to get a target word and a selection of rhyming words. It will repeat calls until it accepts a sufficient amount of rhyming matches to build a game. Interact.js library is used to handle drag and drop events.
 
 <h2>To-Do</h2>
 [x] Generate DOM elements that take information from API call <br>
