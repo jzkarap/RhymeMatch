@@ -12,5 +12,10 @@ Interact.js library is used to handle drag and drop events.
 [x] Allow drag-and-drop interface so players can interact with those generated elements <br>
 [x] Build an array of non-rhyming words to provide a challenge for budding logophiles <br>
 [ ] Style to make it look nice <br>
+<blockquote>
+  + Toggle play/replay <br>
+  + Feedback on incorrect selection <br>
+  + Sound effects
+</blockquote>
 [ ] Clean up code so it doesn't look like such a Frankenstein monster <br>
 [ ] Add/clarify line comments
