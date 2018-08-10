@@ -1,5 +1,5 @@
 # RhymeMatch
-* RhymeMatch will be a drag-and-drop game for young children to practice rhyming words
+* RhymeMatch is a drag-and-drop game for young children to practice rhyming words
 
 <img src="https://github.com/jzkarap/RhymeMatch/blob/master/RhymeGame.gif?raw=true">
 
