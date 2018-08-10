@@ -44,7 +44,10 @@ function drawWordSelection(rhymingWords, decoyWords) {
             if (rhymingWords.indexOf(word) !== -1) {
                 displayWord.classList.add("can-drop", "yes-drop");
             }
-            
+            else {
+                displayWord.classList.add("no-drop");
+            }
+
             // Can limit X and Y positions by window height/pixels or a percent of screen size;
             // here, limiting by percent of screen size
             // let posX = (Math.random() * ($(window).width() - 200)).toFixed();
@@ -374,10 +377,6 @@ interact('.draggable')
 
         // call this function on every dragmove event
         onmove: dragMoveListener,
-        // call this function on every dragend event
-        onend: function (event) {
-            var textEl = event.target.querySelector('p');
-        }
     });
 
 function dragMoveListener(event) {
@@ -402,17 +401,27 @@ window.dragMoveListener = dragMoveListener;
 // enable draggables to be dropped into this
 interact('.dropzone').dropzone({
     // only accept elements matching this CSS selector
-    accept: '.yes-drop',
+    accept: '.yes-drop, .no-drop',
     // Require a 75% element overlap for a drop to be possible
     overlap: 0.75,
 
     ondrop: function (event) {
-        event.relatedTarget.classList.add("bingo");
-        if($(".bingo").length >= (allWords.length / 2)) {
-            event.target.classList.add("winner");
-            $(".congrats").text("Nice work. Try again soon.");
-            console.log("Nice work. Try again soon.");
-            console.log("");
+        // If a dropped element has a class of yes-drop (rhyming word)
+        if (event.relatedTarget.classList.contains("yes-drop")) {
+            // ... give a class of bingo
+            event.relatedTarget.classList.add("bingo");
+            // If the array of bingos has a length equal to half or more of the length of the current list of words,
+            // player wins
+            // (could also judge against length of rhymingWords array)
+            if ($(".bingo").length >= (allWords.length / 2)) {
+                event.target.classList.add("winner");
+                $(".congrats").text("Nice work. Try again soon.");
+                console.log("Nice work. Try again soon.");
+                console.log("");
+            }
+            // If a dropped element is not a rhyming word, indicate incorrect selection
+        } else {
+                event.relatedTarget.classList.add("nope");
         }
     }
 });

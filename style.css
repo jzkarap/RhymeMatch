@@ -29,6 +29,7 @@ p {
     padding: 1%;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0,0,0,.2);
+    transition: background-color .4s;
 }
 
 .dropzone {
@@ -154,4 +155,8 @@ h1 {
 
 .congrats {
     float: right;
+}
+
+.nope {
+    background-color: red;
 }
