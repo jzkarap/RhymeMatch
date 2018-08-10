@@ -14,7 +14,7 @@ body {
     height: 75vh;
     position: relative;
     background-color: rgba(0,0,0,.2);
-    border-radius: 30px;
+    border-radius: 10px;
     padding: 20px;
     margin: 20px;
     box-shadow: 0 5px 15px rgba(0,0,0,.2);
@@ -27,7 +27,7 @@ p {
     background-color: pink;
     opacity: .8;
     padding: 1%;
-    border-radius: 100px;
+    border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0,0,0,.2);
 }
 
@@ -56,7 +56,7 @@ p {
 button {
     margin: 0 5%;
     padding: 1%;
-    border-radius: 30px;
+    border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0,0,0,.2);
     outline: none;
     font-family: 'Josefin Sans', sans-serif;
@@ -69,7 +69,6 @@ button {
     /* Since this is inline-block, it is treated as if it were text...
         ... we can add text-align to its parent to center it, 
         without having to worry about any positioning shenanigans */
-    border-radius: 100px;
     /* Transition should be on initial state */
     /* We give a transition for all animations, and give a duration of .2s */
     transition: all .2s;
@@ -98,7 +97,7 @@ button::after {
         so if it is meant to appear the same as its parent, it should occupy the same height and width */
     height: 100%;
     width: 100%;
-    border-radius: 100px;
+    border-radius: 10px;
     /* To use absolute position on pseudo-element,
         set its parent element to relative */
     position: absolute;

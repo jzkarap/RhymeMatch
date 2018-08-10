@@ -44,15 +44,19 @@ function drawWordSelection(rhymingWords, decoyWords) {
             if (rhymingWords.indexOf(word) !== -1) {
                 displayWord.classList.add("can-drop", "yes-drop");
             }
-            // choices.appendChild(displayWord);
+            
+            // Can limit X and Y positions by window height/pixels or a percent of screen size;
+            // here, limiting by percent of screen size
+            // let posX = (Math.random() * ($(window).width() - 200)).toFixed();
+            // let posY = (Math.random() * ($(window).height() - 250)).toFixed();
 
-            let posX = (Math.random() * ($(window).width() - 250)).toFixed();
-            let posY = (Math.random() * ($(window).height() - 250)).toFixed();
+            let posX = (Math.random() * 90).toFixed();
+            let posY = (Math.random() * 90).toFixed();
 
             $(displayWord).css({
                 'position': 'absolute',
-                'left': posX + 'px',
-                'top': posY + 'px',
+                'left': posX + '%',
+                'top': posY + '%',
                 'display': 'none'
             }).appendTo(choices).fadeIn(100);
         });
@@ -342,6 +346,7 @@ function fishForNewWords() {
 
 startButton.addEventListener("click", function () {
 
+    $(startButton).text("Replay?");
     $(".congrats").text("");
     undrawWordSelection();
     dumpRhymes();
@@ -376,7 +381,7 @@ interact('.draggable')
     });
 
 function dragMoveListener(event) {
-    var target = event.target,
+    let target = event.target,
         // keep the dragged position in the data-x/data-y attributes
         x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx,
         y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy;
@@ -401,24 +406,6 @@ interact('.dropzone').dropzone({
     // Require a 75% element overlap for a drop to be possible
     overlap: 0.75,
 
-    // listen for drop related events:
-    ondropactivate: function (event) {
-        // add active dropzone feedback
-        event.target.classList.add('drop-active');
-    },
-    ondragenter: function (event) {
-        var draggableElement = event.relatedTarget,
-            dropzoneElement = event.target;
-
-        // feedback the possibility of a drop
-        dropzoneElement.classList.add('drop-target');
-        draggableElement.classList.add('can-drop');
-    },
-    ondragleave: function (event) {
-        // remove the drop feedback style
-        event.target.classList.remove('drop-target');
-        event.relatedTarget.classList.remove('can-drop');
-    },
     ondrop: function (event) {
         event.relatedTarget.classList.add("bingo");
         if($(".bingo").length >= (allWords.length / 2)) {
@@ -427,11 +414,5 @@ interact('.dropzone').dropzone({
             console.log("Nice work. Try again soon.");
             console.log("");
         }
-    },
-    ondropdeactivate: function (event) {
-        // remove active dropzone feedback
-        event.target.classList.remove('drop-active');
-        event.target.classList.remove('drop-target');
-        // event.relatedTarget.classList.remove("bingo");
     }
 });
