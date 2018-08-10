@@ -18,6 +18,8 @@ body {
     padding: 20px;
     margin: 20px;
     box-shadow: 0 5px 15px rgba(0,0,0,.2);
+    -ms-touch-action: none;
+    touch-action: none;
   }
 
 p {
