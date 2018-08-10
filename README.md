@@ -3,7 +3,7 @@
 
 <img src="https://github.com/jzkarap/RhymeMatch/blob/master/RhymeGame.gif?raw=true">
 
-RhymeMatch makes calls to datamuse API to get a target word and a selection of rhyming words. It will repeat calls until it accepts a sufficient amount of rhyming matches to build a game. An equal number of non-rhyming words is called. Rhyming words and non-rhyming words are intermixed and randomly placed across screen within the display.
+RhymeMatch makes calls to datamuse API to get a target word and a selection of rhyming words. It will repeat calls until it accepts a sufficient amount of rhyming matches to build a game. An equal number of non-rhyming words is called. Rhyming words and non-rhyming words are intermixed and randomly placed within the display.
 
 Interact.js library is used to handle drag and drop events.
 
