@@ -4,15 +4,14 @@ let decoyWords = [];
 let allWords = [];
 
 const startButton = document.querySelector(".start-game");
-
 const target = document.querySelector(".match-to");
 const choices = document.querySelector(".choices");
 
 function drawTargetWord(targetWord) {
-    const displayTarget = document.createElement("p");
+    const displayTarget = document.createElement("button");
     displayTarget.textContent = targetWord;
     displayTarget.classList.add("dropzone");
-    target.appendChild(displayTarget);
+    choices.appendChild(displayTarget);
 }
 
 /**
@@ -38,7 +37,7 @@ function drawWordSelection(rhymingWords, decoyWords) {
         shuffle(allWords);
 
         allWords.forEach(function (word) {
-            let displayWord = document.createElement("p");
+            let displayWord = document.createElement("button");
             displayWord.textContent = word;
             displayWord.classList.add("draggable");
             if (rhymingWords.indexOf(word) !== -1) {
@@ -53,8 +52,8 @@ function drawWordSelection(rhymingWords, decoyWords) {
             // let posX = (Math.random() * ($(window).width() - 200)).toFixed();
             // let posY = (Math.random() * ($(window).height() - 250)).toFixed();
 
-            let posX = (Math.random() * 90).toFixed();
-            let posY = (Math.random() * 90).toFixed();
+            let posX = (Math.random() * 80).toFixed(0);
+            let posY = Number((Math.random() * 50).toFixed(0)) + Number(25);
 
             $(displayWord).css({
                 'position': 'absolute',
@@ -67,7 +66,7 @@ function drawWordSelection(rhymingWords, decoyWords) {
 }
 
 function undrawTarget() {
-    $(".match-to").children().remove();
+    $(".choices").children().remove();
 }
 
 function undrawWordSelection() {
@@ -350,7 +349,6 @@ function fishForNewWords() {
 startButton.addEventListener("click", function () {
 
     $(startButton).text("Replay?");
-    $(".congrats").text("");
     undrawWordSelection();
     dumpRhymes();
     dumpDecoys();
@@ -415,7 +413,6 @@ interact('.dropzone').dropzone({
             // (could also judge against length of rhymingWords array)
             if ($(".bingo").length >= (allWords.length / 2)) {
                 event.target.classList.add("winner");
-                $(".congrats").text("Nice work. Try again soon.");
                 console.log("Nice work. Try again soon.");
                 console.log("");
             }

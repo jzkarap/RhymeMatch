@@ -1,0 +1,213 @@
+@font-face {
+	font-family: "IBM Plex Sans Roman";
+	src: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/85648/IBMPlexSansVar-Roman.ttf");
+}
+
+html,
+body {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: "IBM Plex Sans Roman", Times;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+}
+
+body {
+	background-color: rgba(0, 0, 0, 0.2);
+}
+
+.game-container {
+	width: 90%;
+	height: 80%;
+	position: relative;
+	background-color: rgba(0, 0, 0, 0.2);
+	border-radius: 2px;
+	padding: 20px;
+	margin-top: 10px;
+	box-sizing: border-box;
+	-ms-touch-action: none;
+	touch-action: none;
+}
+
+button {
+	outline: none;
+	border: none;
+	cursor: pointer;
+	box-sizing: border-box;
+	font-family: "IBM Plex Sans Roman", Times;
+}
+
+.choices button {
+	display: inline-block;
+	width: auto;
+	font-size: 8vmin;
+	text-align: center;
+	opacity: 0.8;
+	border-radius: 2px;
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+	transition: background-color 0.2s;
+	padding: 1%;
+}
+
+button.dropzone {
+	font-size: 14vmin;
+	height: 22vmin;
+	display: flex;
+	align-items: center;
+	padding: 6% 2%;
+	width: auto;
+	opacity: 1;
+	background-color: blue;
+	color: orange;
+	text-shadow: 0 5px 6px rgba(0, 0, 0, 0.6);
+	box-shadow: inset 0 5px 6px rgba(0, 0, 0, 0.6);
+	cursor: not-allowed;
+}
+
+.choices {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
+.start-game {
+	width: 260px;
+	padding: 1%;
+	border-radius: 2px;
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+	outline: none;
+	font-family: "IBM Plex Sans Roman", Times;
+	font-weight: 700;
+	text-transform: uppercase;
+	text-decoration: none;
+	padding: 15px 40px;
+	/* Display element as its own block instead of simply inline */
+	display: inline-block;
+	/* Since this is inline-block, it is treated as if it were text...
+        ... we can add text-align to its parent to center it, 
+        without having to worry about any positioning shenanigans */
+	/* Transition should be on initial state */
+	/* We give a transition for all animations, and give a duration of .2s */
+	transition: all 0.2s;
+	position: relative;
+}
+
+.start-game:hover {
+	/* In CSS, Y-axis moves from top to bottom,
+        so to move up we pass through negative values */
+	transform: translateY(-3px);
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.start-game:active {
+	transform: translateY(-1px);
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* To use ::after pseudo-element, its content must be specified */
+/* Its display property must also be specified (and should match whatever element it is being placed after,
+so that they appear similar */
+.start-game::after {
+	content: "";
+	display: inline-block;
+	/* A pseudo-element is essentially treated as a child of the element it is bound to;
+        so if it is meant to appear the same as its parent, it should occupy the same height and width */
+	height: 100%;
+	width: 100%;
+	border-radius: 2px;
+	/* To use absolute position on pseudo-element,
+        set its parent element to relative */
+	position: absolute;
+	top: 0;
+	left: 0;
+	transition: all 0.4s;
+	z-index: -1;
+	background-color: #fff;
+	color: #777;
+}
+
+/* Set after pseudo-element only when button is hovered */
+.start-game:hover::after {
+	transform: scaleX(1.4) scaleY(1.6);
+	opacity: 0;
+}
+
+h1 {
+	margin: 0;
+	text-shadow: 2px 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.bingo {
+	background-color: green;
+}
+
+.winner {
+	background-color: red;
+	animation: winState 15s infinite linear;
+	transition: 3s;
+}
+
+@keyframes winState {
+	0% {
+		background-color: blue;
+	}
+	5% {
+		background-color: indigo;
+	}
+	10% {
+		background-color: yellow;
+	}
+	15% {
+		background-color: orangered;
+	}
+	20% {
+		background-color: purple;
+	}
+	25% {
+		background-color: royalblue;
+	}
+	30% {
+		background-color: brown;
+	}
+	35% {
+		background-color: coral;
+	}
+	40% {
+		background-color: orange;
+	}
+	45% {
+		background-color: darkcyan;
+	}
+	50% {
+		background-color: indianred;
+	}
+	60% {
+		background-color: slateblue;
+	}
+	70% {
+		background-color: slategray;
+	}
+	80% {
+		background-color: crimson;
+	}
+	90% {
+		background-color: rosybrown;
+	}
+	100% {
+		background-color: blueviolet;
+	}
+}
+
+.nope {
+	background-color: red;
+}

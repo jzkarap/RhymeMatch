@@ -3,35 +3,31 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Rhyme Matcher</title>
+    <title>Rhyme It</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
-    <script src="interact.min.js"></script>
+    <script src="/dist/interact.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:400,600,700" rel="stylesheet">
 </head>
 
 <body>
 
-    <h1>Rhyme Matching Game <span class="congrats"></span></h1>
+    <h1>Rhyme It!</h1>
 
     <button class="start-game">Play?</button>
 
-    <div class="container">
+    <main class="game-container" aria-role="game-container">
 
-        <div class="match-to">
+        <section class="choices" aria-role="choice-container">
 
-        </div>
-
-        <div class="choices">
-
-        </div>
+        </section>
         
-    </div>
+    </main>
 
-    <script src="app.js"></script>
+    <script src="/dist/app.js"></script>
 
 </body>
 
