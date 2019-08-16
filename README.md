@@ -7,6 +7,8 @@ RhymeMatch makes calls to datamuse API to get a target word and a selection of r
 
 Interact.js library is used to handle drag and drop events.
 
+[Play here](https://secret-meadow-24357.herokuapp.com/)
+
 <h2>To-Do</h2>
 [x] Generate DOM elements that take information from API call <br>
 [x] Allow drag-and-drop interface so players can interact with those generated elements <br>
